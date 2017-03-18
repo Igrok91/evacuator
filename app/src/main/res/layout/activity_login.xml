@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".auth.FirstActivity"
+    xmlns:mask="http://schemas.android.com/apk/res-auto">
+
+    <!-- Login progress -->
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical">
+
+            <com.tomer.fadingtextview.FadingTextView
+                android:id="@+id/title_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="?attr/actionModeSplitBackground"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:textAllCaps="false"
+                app:texts="@array/title"
+                app:timeout="5000" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:id="@+id/number_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_number"
+                    android:inputType="phone"
+                    android:paddingBottom="15dp"
+                    android:selectAllOnFocus="false"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorHighlight="@color/colorPrimaryDark"
+                    android:textColorLink="@android:color/holo_blue_light"
+                    android:typeface="monospace"
+                    mask:allowed_chars="1234567890"
+                    mask:mask="+7(###)###-##-##" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:textColorHighlight="@android:color/holo_red_light"
+                android:textColorLink="@android:color/holo_red_light" />
+
+            <Button
+                android:id="@+id/email_sign_in_button"
+                android:layout_width="58dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_arrow_forward_black_24dp"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textColor="?attr/actionModeSplitBackground"
+                android:layout_gravity="center|right"/>
+
+
+            <com.tomer.fadingtextview.FadingTextView
+                android:id="@+id/fadingTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="?attr/actionModeSplitBackground"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:textAllCaps="false"
+                app:texts="@array/first"
+                app:timeout="5000" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="first">
+        <item>Добро пожаловать</item>
+        <item>Введите свой номер телефона </item>
+        <item>Введите свой номер телефона </item>
+        <item>Введите свой номер телефона </item>
+        <item>Введите свой номер телефона </item>
+        <item>Введите свой номер телефона </item>
+        <item>Введите свой номер телефона </item>
+    </string-array>
+
+    <string-array name="title">
+        <item>The Best Evacuator</item>
+    </string-array>
+</resources>
