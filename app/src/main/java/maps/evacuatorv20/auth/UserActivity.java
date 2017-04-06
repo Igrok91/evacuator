@@ -25,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import maps.evacuatorv20.Constants.Constants;
+import maps.evacuatorv20.MapsActivity;
 import maps.evacuatorv20.R;
 import maps.evacuatorv20.auth.model.Message;
 import maps.evacuatorv20.auth.model.User;
@@ -211,11 +212,11 @@ public class UserActivity extends AbstractAsyncActivity {
             saveDataUserOnDb();
             saveUserOnSetting();
             displayResponse(result);
-      /*      if(result != null) {
-                Intent intent = new Intent(UserActivity.this, UserActivity.class);
+          if(result != null) {
+                Intent intent = new Intent(UserActivity.this, MapsActivity.class);
                 intent.putExtra(Constants.APP_PREFERENCES_PHONE, result.getNumber());
                 startActivity(intent);
-            }*/
+            } else  displayResponse(Constants.USER_REGISTER_ERROR);
 
 
         }
@@ -241,11 +242,11 @@ public class UserActivity extends AbstractAsyncActivity {
 
             if (newRowId == -1) {
                 // Если ID  -1, значит произошла ошибка
-                displayResponse("Ошибка при регистрации");
+                displayResponse(Constants.USER_REGISTER_ERROR);
                 return false;
 
             } else {
-                displayResponse("Пользователь зарегистрирован");
+                displayResponse(Constants.USER_REGISTER_SUCCESS);
                 return true;
             }
         }

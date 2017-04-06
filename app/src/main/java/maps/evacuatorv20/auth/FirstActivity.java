@@ -44,6 +44,7 @@ import java.util.regex.Pattern;
 
 import br.com.sapereaude.maskedEditText.MaskedEditText;
 import maps.evacuatorv20.Constants.Constants;
+import maps.evacuatorv20.MapsActivity;
 import maps.evacuatorv20.R;
 import maps.evacuatorv20.auth.model.Message;
 
@@ -74,7 +75,10 @@ public class FirstActivity extends AbstractAsyncActivity {
 		super.onCreate(savedInstanceState);
 		preferences = getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE);
 		if (preferences.contains(Constants.APP_PREFERENCES_PHONE)) {
-				displayResponse("Пользователь авторизован уже блеать");
+			Intent intent = new Intent(FirstActivity.this, MapsActivity.class);
+			startActivity(intent);
+			displayResponse("Пользователь авторизован уже блеать");
+
 		} else {
 
 			setContentView(R.layout.activity_login);
